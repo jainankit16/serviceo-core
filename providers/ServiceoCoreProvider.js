@@ -1,6 +1,6 @@
 'use strict'
 
-const { ServiceProvider } = require.main.require('@adonisjs/fold')
+const { ServiceProvider } = require('@adonisjs/fold')
 
 class ServiceoCoreProvider extends ServiceProvider {
   /**
