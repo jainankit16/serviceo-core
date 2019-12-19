@@ -18,12 +18,12 @@ module.exports = {
     | ServiceoCore connection config
     |--------------------------------------------------------------------------
     */
-    sourceUrl: Env.get('MS_BASE_URL_ACCOUNT', 'http://localhost:8080/api/v1'),
-    redisTTL: {
+    baseUrl: Env.get('MS_BASE_URL_ACCOUNT', 'http://localhost:8080/api/v1'),
+    redisTTL: Env.get('REDIS_TTL', {
         account: 60 * 60 * 3,
         program: 60 * 60 * 3,
         department: 60 * 60 * 6,
         team: 60 * 60 * 6,
         user: 60 * 60
-    }
+    })
 }

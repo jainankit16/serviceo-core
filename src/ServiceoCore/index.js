@@ -11,7 +11,7 @@ class ServiceoCore {
     this._token = null;
     this._tokenExpiresAt = null;
     this._redisTTL = Config.get("serviceoCore.redisTTL");
-    this._baseUrl = Config.get("serviceoCore.sourceUrl");
+    this._baseUrl = Config.get("serviceoCore.baseUrl");
     this._authUrl = Config.get("auth.auth0.url");
     this._authGrantType = Config.get("auth.auth0.grantType");
     this._authClientId = Config.get("auth.auth0.clientId");
