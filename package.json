@@ -18,15 +18,5 @@
     "@adonisjs/framework": "^5.0.13",
     "japa": "^1.0.6",
     "japa-cli": "^1.0.1"
-  },
-  "adonisjs": {
-    "types": "Serviceo/Core",
-    "providers": [
-      "Serviceo/Core"
-    ],
-    "config": [{
-      "src": "index.js",
-      "dest": "redis"
-    }]
   }
 }
