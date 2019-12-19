@@ -1,6 +1,6 @@
 'use strict'
 
-const { ServiceProvider } = require('@adonisjs/fold')
+const ServiceProvider = require('adonis-fold').ServiceProvider
 
 class ServiceoCoreProvider extends ServiceProvider {
   /**
@@ -10,12 +10,13 @@ class ServiceoCoreProvider extends ServiceProvider {
    *
    * @return {void}
    */
-  register() {
-    this.app.singleton('Serviceo/Core', () => {
-      const Config = this.app.use('Adonis/Src/Config')
+  * register () {
+    this.app.bind('Adonis/Addons/Serviceo/Core', (app) => {
+      const Config = app.use('Adonis/Src/Config')
       const ServiceoCore = require('../src/ServiceoCore')
       return new ServiceoCore(Config)
     })
+    this.app.alias('Adonis/Addons/Serviceo/Core', 'Serviceo/Core')
   }
 
   /**
