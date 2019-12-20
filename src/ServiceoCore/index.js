@@ -211,6 +211,24 @@ class ServiceoCore {
     );
   }
 
+  async getCaseBySfdcId(sfdcId) {
+    return this._fetchAndCache(
+      "Cases",
+      { sfdcId: sfdcId },
+      `Case::${sfdcId}`,
+      this._redisTTL["case"]
+    );
+  }
+
+  async getCaseById(id) {
+    return this._fetchAndCache(
+      "Cases",
+      { id: id },
+      `Case::${id}`,
+      this._redisTTL["case"]
+    );
+  }
+
   async _fetchAndCache(subUrl, where, cacheKey, cacheTTL) {
     return new Promise(async (resolve, reject) => {
       const url = `${this._baseUrl}/${subUrl}`
