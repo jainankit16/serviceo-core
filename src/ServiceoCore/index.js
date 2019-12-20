@@ -193,6 +193,24 @@ class ServiceoCore {
     );
   }
 
+  async getJobBySfdcId(sfdcId) {
+    return this._fetchAndCache(
+      "Job",
+      { sfdcId: sfdcId },
+      `Job::${sfdcId}`,
+      this._redisTTL["job"]
+    );
+  }
+
+  async getJobById(id) {
+    return this._fetchAndCache(
+      "Job",
+      { id: id },
+      `Job::${id}`,
+      this._redisTTL["job"]
+    );
+  }
+
   async _fetchAndCache(subUrl, where, cacheKey, cacheTTL) {
     return new Promise(async (resolve, reject) => {
       const url = `${this._baseUrl}/${subUrl}`

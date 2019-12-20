@@ -24,6 +24,7 @@ module.exports = {
         program: 60 * 60 * 3,
         department: 60 * 60 * 6,
         team: 60 * 60 * 6,
-        user: 60 * 60
+        user: 60 * 60,
+        job: 60 * 60 * 3
     })
 }
