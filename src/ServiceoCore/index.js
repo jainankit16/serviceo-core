@@ -195,7 +195,7 @@ class ServiceoCore {
 
   async getJobBySfdcId(sfdcId) {
     return this._fetchAndCache(
-      "Job",
+      "Jobs",
       { sfdcId: sfdcId },
       `Job::${sfdcId}`,
       this._redisTTL["job"]
@@ -204,7 +204,7 @@ class ServiceoCore {
 
   async getJobById(id) {
     return this._fetchAndCache(
-      "Job",
+      "Jobs",
       { id: id },
       `Job::${id}`,
       this._redisTTL["job"]
